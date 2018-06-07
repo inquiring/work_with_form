@@ -1,0 +1,88 @@
+.form__element
+{
+    font-size: 14px;
+
+    box-sizing: border-box;
+    min-width: 25%;
+    min-height: 90px;
+}
+
+.form__element--wide
+{
+    width: 50%;
+}
+
+.form__element label
+{
+    display: block;
+
+    padding-bottom: 5px;
+}
+
+.form__element input
+{
+    width: calc(100% - 20px);
+}
+
+.form__photo-container
+{
+    width: 140px;
+}
+
+.form__element--submit
+{
+    width: 100%;
+    padding: 40px 0;
+
+    text-align: center;
+}
+
+.form__reset
+{
+    font: 14px Roboto, sans-serif;
+
+    margin: 0;
+    padding: 0;
+
+    cursor: pointer;
+    text-decoration: underline;
+
+    border: 0;
+    background: none;
+}
+
+input[type=text],
+input[type=number],
+select,
+textarea
+{
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+
+    box-sizing: border-box;
+    width: 222px;
+    height: 42px;
+    padding-left: 14px;
+
+    border: 1px solid #d9d9d3;
+    border-radius: 4px;
+    background-color: white;
+}
+
+input[type=text]:hover,
+input[type=number]:hover,
+select:hover,
+textarea:hover
+{
+    border-color: #fa9;
+}
+
+input[type=text]:focus,
+input[type=number]:focus,
+select:focus,
+textarea:focus
+{
+    outline: none;
+    box-shadow: 0 0 4px 1px #ff6547;
+}

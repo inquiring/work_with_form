@@ -1,0 +1,67 @@
+.features
+{
+    white-space: nowrap;
+}
+
+.features input[type=checkbox]
+{
+    position: absolute;
+    left: -900em;
+}
+
+.features label
+{
+    font-size: 0;
+
+    text-indent: -900em;
+}
+
+.features input:checked + label
+{
+    background-color: #ff6547;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .2) inset;
+}
+
+.feature
+{
+    display: inline-block;
+    overflow: hidden;
+
+    width: 30px;
+    min-width: 30px;
+    height: 28px;
+    min-height: 28px;
+
+    background: url('../img/features-sprite.png') center no-repeat;
+    background-size: 100%;
+}
+
+.feature--dishwasher
+{
+    background-position: 0 2px;
+}
+
+.feature--elevator
+{
+    background-position: 2px -24px;
+}
+
+.feature--conditioner
+{
+    background-position: 2px -50px;
+}
+
+.feature--parking
+{
+    background-position: 2px -75px;
+}
+
+.feature--washer
+{
+    background-position: 2px -101px;
+}
+
+.feature--wifi
+{
+    background-position: 1px -126px;
+}

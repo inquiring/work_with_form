@@ -1,0 +1,267 @@
+.map
+{
+    position: relative;
+
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+
+    height: 750px;
+
+    border-radius: 0 0 10px 10px;
+    background: url('../img/map.png') no-repeat center bottom;
+
+    align-items: flex-end;
+}
+
+.map__pins
+{
+    position: relative;
+
+    width: 100%;
+
+    flex-grow: 1;
+}
+
+.map__pin
+{
+    position: absolute;
+    z-index: 1;
+
+    width: 40px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+
+    transform: translate(-50%, -50%);
+
+    border: 0;
+    background: none;
+}
+
+.map__pin:not(.map__pin--main):hover,
+.map__pin:not(.map__pin--main):active {
+  cursor: pointer;
+}
+
+.map__pin img
+{
+    padding: 3px;
+
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.map__pin::after
+{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+
+    width: 0;
+    height: 0;
+
+    content: '';
+
+    border: solid 5px transparent;
+    border-top: solid 18px #fff;
+    border-bottom: 0;
+}
+
+.map__pin:active,
+.map__pin--active
+{
+    outline: none;
+}
+
+.map__pin:active img,
+.map__pin--active img
+{
+    background-color: #ff5635;
+    box-shadow: 0 0 10px 10px rgba(255, 86, 53, .7);
+}
+
+.map__pin:active::after,
+.map__pin--active::after
+{
+    border-top-color: #ff5635;
+}
+
+.map__pin--main
+{
+    top: 375px;
+    left: 50%;
+    z-index: 10;
+
+    width: 65px;
+    height: 65px;
+
+    cursor: move;
+}
+
+.map__pin--main img
+{
+    position: relative;
+    z-index: 1;
+
+    padding: 2px 6px 6px;
+
+    transform: translateY(-2px);
+
+    border: solid 5px #ff5635;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.map__pin--main:active img,
+.map__pin--main--active img
+{
+    background: #fff;
+}
+
+.map__pin--main svg
+{
+    position: absolute;
+    z-index: 0;
+    top: -50px;
+    left: -47px;
+
+    width: 156px;
+    height: 156px;
+
+    transition: transform 300ms ease-in;
+    transform: rotate(120deg) scale(0);
+    transform-origin: 78px 78px;
+
+    will-change: transform;
+}
+
+.map__pin--main::after
+{
+    transition: transform 300ms ease-in;
+    transform: translate(-50%, -6px);
+
+    border-top-width: 22px;
+    border-top-color: #ff5635;
+
+    will-change: transform;
+}
+
+.map--faded .map__pin--main svg
+{
+    transform: rotate(-20deg) scale(1);
+}
+
+.map--faded .map__pin--main:after
+{
+    transform: translate(-50%, -30px);
+}
+
+.map__pin--main text
+{
+    font-family: Roboto, sans-serif;
+    font-size: 7px;
+    font-weight: bold;
+
+    fill: #fff;
+}
+
+.map__pinsoverlay
+{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    transition: opacity 300ms ease-in;
+
+    opacity: 0;
+    background: rgba(0, 0, 0, .3);
+
+    will-change: transform;
+}
+
+.map--faded .map__pinsoverlay
+{
+    opacity: 1;
+}
+
+.map__pinsoverlay h2
+{
+    font-size: 85px;
+    font-weight: 900;
+
+    position: absolute;
+    top: 170px;
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    text-align: center;
+
+    color: #fff;
+}
+
+.map__card
+{
+    font-size: 14px;
+
+    position: absolute;
+    z-index: 2;
+    top: 150px;
+    left: 20px;
+
+    box-sizing: border-box;
+    width: 230px;
+    padding: 10px 10px 20px;
+
+    border-radius: 5px;
+    background: #fff;
+}
+
+
+.map__filters-container
+{
+    width: 100%;
+
+    background-color: rgba(3, 28, 45, .5);
+}
+
+.map__filters
+{
+    display: flex;
+
+    width: 960px;
+    height: 46px;
+    margin: 0 auto;
+
+    transition: opacity 300ms ease-in;
+
+    opacity: 1;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.map--faded .map__filters
+{
+    opacity: 0;
+}
+
+.map__filters select
+{
+    font-size: 14px;
+
+    height: 30px;
+    margin-right: 10px;
+
+    vertical-align: middle;
+}
+
+.map__filters .feature
+{
+    border-radius: 3px;
+    background-color: #f8f8f8;
+}
+
